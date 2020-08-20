@@ -34,6 +34,7 @@ import org.apache.hadoop.hdds.scm.cli.container.WithScmClient;
 import org.apache.hadoop.hdds.scm.cli.datanode.DatanodeCommands;
 import org.apache.hadoop.hdds.scm.cli.pipeline.PipelineCommands;
 import org.apache.hadoop.hdds.scm.client.ScmClient;
+import org.apache.hadoop.ozone.admin.scm.GetScmServiceRolesSubcommand;
 import org.apache.hadoop.util.NativeCodeLoader;
 
 import org.apache.commons.lang3.StringUtils;
@@ -59,7 +60,7 @@ import picocli.CommandLine.Option;
         PipelineCommands.class,
         DatanodeCommands.class,
         TopologySubcommand.class,
-        ReplicationManagerCommands.class
+        ReplicationManagerCommands.class,
     },
     mixinStandardHelpOptions = true)
 public class OzoneAdmin extends GenericCli implements WithScmClient {
