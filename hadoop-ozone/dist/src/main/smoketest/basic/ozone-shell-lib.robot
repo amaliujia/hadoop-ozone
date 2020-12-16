@@ -132,6 +132,8 @@ Test key handling
     [arguments]     ${protocol}         ${server}       ${volume}
                     Execute             ozone sh key put ${protocol}${server}/${volume}/bb1/key1 /opt/hadoop/NOTICE.txt
                     Execute             rm -f /tmp/NOTICE.txt.1
+    ${result} =     Execute             ozone sh volume info ${protocol}${server}/${volume} | jq -r '. | select(.name=="${volume}") | .usedNamespace'
+                    Should Be Equal     ${result}       1
                     Execute             ozone sh key get ${protocol}${server}/${volume}/bb1/key1 /tmp/NOTICE.txt.1
                     Execute             diff -q /opt/hadoop/NOTICE.txt /tmp/NOTICE.txt.1
 
