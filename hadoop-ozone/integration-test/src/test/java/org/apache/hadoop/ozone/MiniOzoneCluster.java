@@ -307,7 +307,7 @@ public interface MiniOzoneCluster {
     protected boolean  startDataNodes = true;
     protected CertificateClient certClient;
     protected int pipelineNumLimit = DEFAULT_PIPELIME_LIMIT;
-    protected boolean useMockSCMHAManager = false;
+    protected boolean useMockSCMHAManager = true;
 
     protected Builder(OzoneConfiguration conf) {
       this.conf = conf;

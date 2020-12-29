@@ -76,6 +76,7 @@ public class TestSCMRestart {
         .setTotalPipelineNumLimit(numOfNodes + 1)
         .setHbInterval(1000)
         .setHbProcessorInterval(1000)
+        .setUseMockSCMHAManager(false)
         .build();
     cluster.waitForClusterToBeReady();
     StorageContainerManager scm = cluster.getStorageContainerManager();
